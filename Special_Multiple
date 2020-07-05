@@ -1,0 +1,39 @@
+# https://www.hackerrank.com/challenges/special-multiple/problem
+
+#!/bin/python3
+
+import os
+import sys
+
+# Complete the solve function below.
+def solve(n):
+    # function to find smallest number made  
+    # up of only digits 9’s and 0’s, which  
+    # is a multiple of n.  
+    i = 1
+    # traverse the vector to find  
+    # the smallest multiple of n 
+    while(True):
+        # int is used for string to integer conversion  
+        t = int(bin(i)[2:])*9
+        if(t%n == 0):
+            return str(t)
+        else:
+            i+=1
+            continue
+    
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        n = int(input())
+
+        result = solve(n)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
+# https://www.hackerrank.com/challenges/special-multiple/problem
